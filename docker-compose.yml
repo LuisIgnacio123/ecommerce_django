@@ -1,0 +1,7 @@
+web:
+  build: .
+  restart: always
+  volumes:
+    - .:/app/src
+  ports:
+    - "8084:8084"
