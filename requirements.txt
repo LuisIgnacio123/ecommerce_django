@@ -1,0 +1,2 @@
+Django
+python-tbk==0.2.2

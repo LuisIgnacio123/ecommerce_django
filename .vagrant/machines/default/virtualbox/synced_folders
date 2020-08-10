@@ -1,0 +1,1 @@
+{"virtualbox":{"/home/vagrant/ecommerce/src/":{"guestpath":"/home/vagrant/ecommerce/src","hostpath":"/Users/ignacioaguileravera/ecommerce_django","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/Users/ignacioaguileravera/ecommerce_django","disabled":false,"__vagrantfile":true}}}
