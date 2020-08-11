@@ -1,0 +1,41 @@
+{% extends 'home/container.html' %}
+{% load static %}
+{% block content %}
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+
+function redireccionar(){
+    setTimeout("darClick()", 2000);
+}
+
+function  darClick (){
+    var objO = document.getElementById('submit');
+    setTimeout(4000);
+    objO.click();
+}
+
+</script>
+<body onload="redireccionar()">
+    <section class="page-header page-header-xs">
+        <div class="container">
+            <h1>Redireccionando a Webpay ...</h1>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <!-- <h1>Redireccionando a Webpay ...</h1> -->
+            <form id="token" method="POST" action="{{ transaction.url }}" class="pure-form pure-form-stacked" style="visibility: hidden;">{% csrf_token %}
+              <fieldset>
+                <label for="show">
+                  <code>{{ transaction.token }}</code>
+                </label>
+                <input type="hidden" name="token_ws" value="{{ transaction.token }}">
+                <button id="submit" type="submit"></button>
+              </fieldset>
+            </form>
+        </div>
+    </section>
+</body>
+{% endblock %}

@@ -1,0 +1,82 @@
+{% extends 'home/container.html' %}
+{% load static %}
+{% block content %}
+{% load miles %}
+
+
+<section>
+    <div class="container">
+        <!-- CHECKOUT FINAL MESSAGE -->
+        <div class="row">
+            <div class="columns is-mobile">
+                <div class="column is-half is-offset-one-quarter">    
+                    <h3 class="title">Detalle del Pedido</h3>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="columns is-mobile">
+                <div class="column is-half is-offset-one-quarter">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <td>
+                                    Id Orden
+                                </td>
+                                <td>
+                                    Fecha de la Orden
+                                </td>
+                                <td>
+                                    Total de la Orden
+                                </td>
+                                <td>
+                                    Tipo de Transacción
+                                </td>
+                                <td>
+                                    Número de Tarjeta
+                                </td>
+                                <td>
+                                    Código de Autorización
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="text-align: center;">
+                                    {{order.id}}
+                                </td>
+                                <td style="text-align: center;">
+                                    {{order.fecha}}                        
+                                </td>
+                                <td style="text-align: center;">
+                                    {{order.monto_bruto|miles}}
+                                </td>
+                                <td style="text-align: center;">
+                                    {{paymentTypeCode}}  
+                                </td>
+                                <td style="text-align: center;">
+                                    {{cardNumber}}
+                                </td>
+                                <td style="text-align: center;">
+                                    {{authorizationCode}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-12">
+                    <div class="box-icon box-icon-center box-icon-round box-icon-transparent box-icon-large " style="background: #f9b202;">
+                        <p class="box-icon-title">Orden Completado</p>
+                        <p class="subtitle">Su orden ha sido procesado correctamente</p>
+                    </div>
+              </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="column is-half is-offset-one-quarter" style="margin-left: 35%">
+                <a href="/" class="button is-primary">Volver al Inicio</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

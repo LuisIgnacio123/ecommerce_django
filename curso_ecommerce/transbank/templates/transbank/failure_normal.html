@@ -1,0 +1,32 @@
+{% extends 'home/container.html' %}
+{% load static %}
+{% block content %}
+
+<section class="page-header page-header-xs">
+	<div class="container">
+		<h1>Pedido Rechazado</h1>
+	</div>
+</section>
+<!-- /PAGE HEADER -->
+
+<!-- CART -->
+<section>
+	<div class="container">
+		<!-- NOT LOGGED IN -->
+		<div class="card card-default">
+			<div class="card-block">
+				<strong>Tú pedido ha sido rechazado</strong><br>
+				Su pedido no se ha podido ser procesado. <br>
+            	Las posibles causas de este rechazo son: <br>
+            	* Error en el ingreso de los datos de su tarjeta de Crédito o Débito (fecha y/o código de seguridad) <br>
+            	* Su tarjeta de Crédito o Débito no cuenta con saldo suficiente <br>
+            	* Tarjeta aún no habilitada en el sistema financiero
+			</div>
+		</div>
+		<a class="btn btn-warning" href="/">Volver al Inicio</a>
+		<!-- /NOT LOGGED IN -->
+	</div>
+</section>
+<!-- /CART -->
+
+{% endblock %}

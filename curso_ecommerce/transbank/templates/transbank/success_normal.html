@@ -1,0 +1,37 @@
+{% extends 'home/container.html' %}
+{% load static %}
+{% block content %}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+
+function redireccionar(){
+    setTimeout("darClick()", 0);
+}
+
+function  darClick (){
+    var objO = document.getElementById('submit');
+    setTimeout(0);
+    objO.click();
+}
+
+</script>
+
+<body onload="redireccionar()">
+    <!-- <h1>Redireccionando a Webpay ...</h1> -->
+     <section class="page-header page-header-xs">
+        <div class="container">
+            <h1>Redireccionando a la Página ...</h1>
+        </div>
+    </section>
+    <section>
+        <form id="token" method="POST" action="{{transaction.urlRedirection}}" class="pure-form pure-form-stacked" style="visibility: hidden;">
+          <fieldset>
+            <input type="hidden" name="token_ws" value="{{token}}">
+            <input type="hidden" name="id_order" value="{{order.id}}">
+            <button id="submit" type="submit"></button>
+          </fieldset>
+        </form>
+    </section>
+</body>
+{% endblock %}
